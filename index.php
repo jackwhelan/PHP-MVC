@@ -9,4 +9,10 @@
             require_once $file;
         }
     });
+
+    use classes as CoreClass;
+    
+    $router = new CoreClass\Router();
+    $router->createRoute($_SERVER['REQUEST_URI']);
+    echo var_dump($router->showRoutes());
 ?>

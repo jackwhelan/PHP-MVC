@@ -12,7 +12,7 @@
 
     use classes as CoreClass;
     
-    $router = new CoreClass\Router();
-    $router->createRoute($_SERVER['REQUEST_URI']);
-    echo var_dump($router->showRoutes());
+    $router = new CoreClass\Router($_SERVER['REQUEST_URI']);
+    $json = json_encode(get_object_vars($router->route));
+    echo $json;
 ?>

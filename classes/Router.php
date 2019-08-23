@@ -5,20 +5,9 @@
     {
         var $route;
 
-        function __construct()
+        function __construct($url)
         {
-            $this->route = [];
-        }
-
-        function createRoute($url)
-        {
-            $newRoute = new Route($url);
-            array_push($this->route, $newRoute);
-        }
-
-        function showRoutes()
-        {
-            return $this->route;
+            $this->route = new Route($url);
         }
     }
 ?>

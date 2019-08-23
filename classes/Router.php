@@ -15,5 +15,10 @@
             $newRoute = new Route($url);
             array_push($this->route, $newRoute);
         }
+
+        function showRoutes()
+        {
+            return $this->route;
+        }
     }
 ?>

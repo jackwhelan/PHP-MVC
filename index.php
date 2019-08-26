@@ -25,4 +25,20 @@
         $assoc = array($ctrl->NAME => $add);
         $controllers = array_merge($controllers, $assoc);
     }
+    $controller_filename = $router->route->controller . "_controller.php";
+
+    // If the requested controller exists, select it.
+    if(file_exists("controllers/$controller_filename"))
+    {
+        $controller = $controllers[$router->route->controller];
+    } // If the URI does not request a specific controller select the default controller.
+    else if ($router->route->controller == "")
+    {
+        $controller = $controllers[$config->DEFAULT_CONTROLLER];
+    } // If the requested controller does not exist, select the error controller.
+    else
+    {
+        $controller = $controllers[$config->ERROR_CONTROLLER];
+    }
+    $controller->renderView();
 ?>

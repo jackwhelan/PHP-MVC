@@ -41,4 +41,12 @@
         $controller = $controllers[$config->ERROR_CONTROLLER];
     }
     $controller->renderView();
+    foreach($router->route->methods as $method)
+    {
+        // Only execute the method if the requested method isn't to render the view!
+        if ($method != "renderView")
+        {
+            ${$router->route->controller . "_Controller"}->$method();
+        }
+    }
 ?>

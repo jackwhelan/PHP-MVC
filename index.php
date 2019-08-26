@@ -17,6 +17,12 @@
     $config = json_decode(file_get_contents("config/config.json"));
 
     $router = new CoreClass\Router($_SERVER['REQUEST_URI']);
-    $json = json_encode(get_object_vars($router->route));
-    echo $json;
+    $controllers = array();
+    foreach($config->CONTROLLERS as $ctrl)
+    {
+        $name = "controllers\\" . $ctrl->NAME . "_Controller";
+        $add = new $name($ctrl->VIEW);
+        $assoc = array($ctrl->NAME => $add);
+        $controllers = array_merge($controllers, $assoc);
+    }
 ?>

@@ -1,0 +1,24 @@
+{
+    "DEFAULT_CONTROLLER": "home",
+    "ERROR_CONTROLLER": "error",
+    "CONTROLLERS":
+    {
+        "HOME_CONTROLLER":
+        {
+            "NAME": "home",
+            "VIEW": "views/layout.phtml"
+        },
+
+        "ABOUT_CONTROLLER":
+        {
+            "NAME": "about",
+            "VIEW": "views/about.phtml"
+        },
+
+        "ERROR_CONTROLLER":
+        {
+            "NAME": "error",
+            "VIEW": "views/error/404.phtml"
+        }
+    }
+}

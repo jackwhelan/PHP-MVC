@@ -12,6 +12,10 @@
 
     use classes as CoreClass;
     
+    // Importing config.json from config folder. This config file contains
+    // the instantiation arguments for controllers and models.
+    $config = json_decode(file_get_contents("config/config.json"));
+
     $router = new CoreClass\Router($_SERVER['REQUEST_URI']);
     $json = json_encode(get_object_vars($router->route));
     echo $json;

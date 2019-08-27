@@ -6,19 +6,22 @@
         "HOME_CONTROLLER":
         {
             "NAME": "home",
-            "VIEW": "views/layout.phtml"
+            "VIEW": "views/layout.phtml",
+            "LOCAL_VIEW": "views/home.phtml"
         },
 
         "ABOUT_CONTROLLER":
         {
             "NAME": "about",
-            "VIEW": "views/about.phtml"
+            "VIEW": "views/layout.phtml",
+            "LOCAL_VIEW": "views/about.phtml"
         },
 
         "ERROR_CONTROLLER":
         {
             "NAME": "error",
-            "VIEW": "views/error/404.phtml"
+            "VIEW": "views/layout.phtml",
+            "LOCAL_VIEW": "views/error.phtml"
         }
     }
 }

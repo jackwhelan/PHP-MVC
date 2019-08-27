@@ -29,7 +29,7 @@
     foreach($config->CONTROLLERS as $ctrl)
     {
         $name = "controllers\\" . $ctrl->NAME . "_Controller";
-        $add = new $name($ctrl->VIEW);
+        $add = new $name($ctrl->VIEW, $ctrl->LOCAL_VIEW);
         $assoc = array($ctrl->NAME => $add);
         $controllers = array_merge($controllers, $assoc);
     }

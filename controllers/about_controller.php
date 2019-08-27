@@ -1,25 +1,16 @@
 <?php
     namespace controllers;
+    use classes\controller;
 
-    class about_controller
+    class about_controller extends controller
     {
         var $view;
+        var $local_view;
 
-        function __construct($view)
+        function __construct($view, $local_view)
         {
             $this->view = $view;
-        }
-
-        function renderView()
-        {
-            if(file_exists($this->view))
-            {
-                include($this->view);
-            }
-            else
-            {
-                return "The view for $this could not be found.";
-            }
+            $this->local_view = $local_view;
         }
     }
 ?>

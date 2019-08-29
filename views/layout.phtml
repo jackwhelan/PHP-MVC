@@ -1,2 +1,8 @@
-Layout
-<?= include($local_view) ?>
+<!DOCTYPE html>
+    <head>
+        <title><?= $title . " | " . $local_title ?></title>
+    </head>
+        <body>
+            <?= include($local_view); ?>
+        </body>
+</html>

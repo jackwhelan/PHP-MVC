@@ -29,13 +29,13 @@
     foreach($config->CONTROLLERS as $ctrl)
     {
         $name = "controllers\\" . $ctrl->NAME . "_Controller";
-        $add = new $name($ctrl->VIEW, $ctrl->LOCAL_VIEW);
+        $add = new $name($ctrl->VIEW, $ctrl->LOCAL_VIEW, $config->DEFAULT_TITLE, $ctrl->LOCAL_TITLE);
         $assoc = array($ctrl->NAME => $add);
         $controllers = array_merge($controllers, $assoc);
     }
 
     // Concatenating _controller.php to the name of the router requested controller.
-    $controller_filename = $router->route->controller . "_controller.php";
+    $controller_filename = $router->route->controller . "_Controller.php";
 
     // If the requested controller exists, select it.
     if(file_exists("controllers/$controller_filename"))
@@ -58,8 +58,8 @@
     // "www.website.com/register/submit" would execute the submit method of the register controller.
     foreach($router->route->methods as $method)
     {
-        // Only execute the method if the requested method isn't to render the view!
-        if ($method != "renderView")
+        // Only execute the method if the requested method isn't to render the view and if it actually exists!
+        if(method_exists($router->route->controller . "_Controller", $method) && $method != "renderView")
         {
             ${$router->route->controller . "_Controller"}->$method();
         }

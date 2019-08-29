@@ -26,11 +26,5 @@
             // Cleanup
             unset($components);
         }
-
-        // Returns entire route object, i.e. A Controller and an array of Methods.
-        function getRouteInfo()
-        {
-            echo "<pre>". var_dump($this) ."</pre>";
-        }
     }
 ?>

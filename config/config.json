@@ -1,4 +1,5 @@
 {
+    "DEFAULT_TITLE": "Jack Whelan",
     "DEFAULT_CONTROLLER": "home",
     "ERROR_CONTROLLER": "error",
     "CONTROLLERS":
@@ -7,21 +8,24 @@
         {
             "NAME": "home",
             "VIEW": "views/layout.phtml",
-            "LOCAL_VIEW": "views/home.phtml"
+            "LOCAL_VIEW": "views/home.phtml",
+            "LOCAL_TITLE": "Home"
         },
 
         "ABOUT_CONTROLLER":
         {
             "NAME": "about",
             "VIEW": "views/layout.phtml",
-            "LOCAL_VIEW": "views/about.phtml"
+            "LOCAL_VIEW": "views/about.phtml",
+            "LOCAL_TITLE": "About"
         },
 
         "ERROR_CONTROLLER":
         {
             "NAME": "error",
             "VIEW": "views/layout.phtml",
-            "LOCAL_VIEW": "views/error.phtml"
+            "LOCAL_VIEW": "views/error.phtml",
+            "LOCAL_TITLE": "Error"
         }
     }
 }

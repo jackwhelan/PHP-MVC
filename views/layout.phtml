@@ -1,8 +1,20 @@
 <!DOCTYPE html>
     <head>
+        <base href="/" />
         <title><?= $title . " | " . $local_title ?></title>
+
+        <meta charset='utf8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+
+        <link rel='stylesheet' href='assets/css/bootstrap.css' type='text/css' />
+		<link rel='stylesheet' href='assets/css/core.css' type='text/css' />
+		<link rel='shortcut icon' href='assets/images/icon.ico' type='image/x-icon' />
+        <link rel='stylesheet' href='assets/css/fontawesome.css' type='text/css' />
+        
+		<script src='assets/js/jquery.js' ></script>
+		<script src='assets/js/core.js' ></script>
     </head>
         <body>
-            <?= include($local_view); ?>
+            <?php require_once($local_view) ?>
         </body>
 </html>

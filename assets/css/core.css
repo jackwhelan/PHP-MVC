@@ -1,0 +1,192 @@
+/* Custom CSS Functionality */
+
+/* Header Globe Icon */
+.logo
+{
+    font-size: 4vh;
+}
+
+/* Header banner styling, applicable to other banners. */
+.banner
+{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+/* A Main body container */
+.part
+{
+    background-color: lightgrey;
+}
+
+h6
+{
+    margin: 0;
+    padding: 0;
+    display: inline;    
+}
+
+body
+{
+    background-image: url("../images/paper.jpg");
+}
+
+.w-4 {
+    width: 24vh;
+}
+
+.red {
+    color: red;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+label {
+    width: 20vh;
+}
+
+.bg-grey {
+    background-color: lightgrey;
+}
+
+#localview {
+    background-color: rgb(211,211,211, 0.9);
+}
+
+#news-wrapper {
+    height: 1080px;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#news-wrapper article {
+    border-style: solid;
+    border-width: 1px;
+    background-color: lightgrey;
+    width: 100%;
+    padding: 2%;
+    margin-top: 2vh;
+}
+
+#news-wrapper h1 {
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 4vh;
+    text-indent: 2vh;
+    border-style: solid;
+    border-width: 1px;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+#news-wrapper h2 {
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3vh;
+}
+
+#news-wrapper p {
+    font-size: 1.85vh;
+}
+
+main { 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: repeat-y;
+}
+
+h6 {
+    margin: 0;
+    padding: 0;
+    font-weight: lighter;
+}
+
+.center {
+    width: 50%;
+    margin: 0 auto;
+}
+
+label {
+    margin-right: 10px;
+}
+
+.portal-button {
+    font-size: 3vh;
+    border-style: solid;
+    border-width: 1px;
+    padding: 25px;
+    margin: 25px;
+    text-align: center;
+    width: 150px;
+    display: block;
+    color: black;
+}
+
+.portal-button:hover {
+    background-color: grey !important;
+    color: black;
+}
+
+.portal-button hr {
+    margin: 1vh;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.core-cont {
+    border-style: solid;
+    border-width: 1px;
+    background-color: lightgrey;
+    width: 100%;
+    padding: 2%;
+    margin-top: 2vh;
+}
+
+.profiler {
+    height: 200px;
+}
+
+.profileItem {
+    margin-top: 3vh;
+    padding-left: 4vh;
+}
+
+.profileItemName {
+    color: black;
+}
+
+.profileItemData {
+    color: #428bca;
+}
+
+.custom-button {
+    margin-right: 4vh;
+    width: 98%;
+    padding:1%
+}
+
+.bottom-right{
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+
+.colblack {
+    color: black !important;
+}
+
+.wi80 {
+    width: 80%;
+}

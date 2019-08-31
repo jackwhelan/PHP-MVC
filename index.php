@@ -15,7 +15,7 @@
 
     // Importing config.json from config folder. This config file contains
     // the instantiation arguments for controllers and models.
-    $config = json_decode(file_get_contents("config/config.json"));
+    $config = json_decode(file_get_contents("config.json"));
 
     // Creates a router object, which breaks up the URI into Controller/Methods[]
     $router = new CoreClass\Router($_SERVER['REQUEST_URI']);

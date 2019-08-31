@@ -51,17 +51,15 @@
         $controller = $controllers[$config->ERROR_CONTROLLER];
     }
 
-    // Render the selected controller.
-    $controller->renderView();
-
     // For each other URI argument execute it as a method. i.e. 
     // "www.website.com/register/submit" would execute the submit method of the register controller.
     foreach($router->route->methods as $method)
     {
         // Only execute the method if the requested method isn't to render the view and if it actually exists!
-        if(method_exists($router->route->controller . "_Controller", $method) && $method != "renderView")
+        if(method_exists($controllers[$router->route->controller], $method) && $method != "renderView")
         {
-            ${$router->route->controller . "_Controller"}->$method();
+            $controllers[$router->route->controller]->$method();
         }
     }
-?>
+
+    $controller->renderView();

@@ -7,7 +7,7 @@
         {
             $config = json_decode(file_get_contents("config.json"));
 
-            include($config->DBCONFIG);
+            include($config->DB_CONFIG);
 
             $query = "SELECT * FROM NEWS";
 

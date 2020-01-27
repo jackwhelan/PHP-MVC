@@ -15,7 +15,7 @@
                 $USERNAME = $_POST['USERNAME'];
                 $PASSWORD = password_hash($_POST['PASSWORD'], PASSWORD_DEFAULT);
 
-                include($config->DBCONFIG);
+                include($config->DB_CONFIG);
 
                 if (!($STMT = $CONN->prepare("INSERT INTO USER(FIRST_NAME, LAST_NAME, USERNAME, PASSWORD) VALUES (?, ?, ?, ?)")))
                 {
@@ -60,7 +60,7 @@
                 $PASSWORD = $_POST['PASSWORD'];
 
                 # Retrieve password hash to verify password.
-                include($config->DBCONFIG);
+                include($config->DB_CONFIG);
 
                 # Stores whether or not there has been an error.
                 $hadError = false;

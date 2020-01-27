@@ -2,6 +2,9 @@
     "DEFAULT_TITLE": "Jack Whelan",
     "DEFAULT_CONTROLLER": "home",
     "ERROR_CONTROLLER": "error",
+
+    "DB_CONFIG": "/var/www/ananke.php",
+
     "CONTROLLERS":
     {
         "HOME_CONTROLLER":
@@ -12,20 +15,92 @@
             "LOCAL_TITLE": "Home"
         },
 
-        "ABOUT_CONTROLLER":
-        {
-            "NAME": "about",
-            "VIEW": "views/layout.phtml",
-            "LOCAL_VIEW": "views/about.phtml",
-            "LOCAL_TITLE": "About"
-        },
-
         "ERROR_CONTROLLER":
         {
             "NAME": "error",
             "VIEW": "views/layout.phtml",
             "LOCAL_VIEW": "views/error.phtml",
             "LOCAL_TITLE": "Error"
+        },
+
+        "ACCOUNT_CONTROLLER":
+        {
+            "NAME": "account",
+            "VIEW": "views/layout.phtml",
+            "LOCAL_VIEW": "views/account.phtml",
+            "LOCAL_TITLE": "Account",
+            "LOGIN_PAGE":
+            {
+                "VIEW": "views/login.phtml",
+                "TITLE": "Login"
+            },
+            "REGISTER_PAGE":
+            {
+                "VIEW": "views/register.phtml",
+                "TITLE": "Register"
+            },
+            "PORTAL_PAGE":
+            {
+                "VIEW": "views/portal.phtml",
+                "TITLE": "Portal"
+            }
+        }
+    },
+
+    "MODELS":
+    {
+        "ACCOUNT_MODEL":
+        {
+            "NAME": "account"
+        },
+
+        "HOME_MODEL":
+        {
+            "NAME": "home"
+        }
+    },
+
+    "NAV":
+    {
+        "LEFT":
+        [
+            {
+                "icon": "fas fa-home",
+                "name": "Home",
+                "link": "/"
+            }
+        ],
+
+        "RIGHT":
+        [
+            {
+                "icon": "fas fa-user-circle",
+                "name": "Account",
+                "link": "account"
+            }
+        ]
+    },
+
+    "MSG":
+    {
+        "SUCCESS":
+        {
+            "A": "Account created successfully!"
+        },
+
+        "ERROR":
+        {
+            "A": "Account not created!"
+        }
+    },
+
+    "PORTAL_ITEMS":
+    {
+        "logout": {
+            "link": "account/logout",
+            "icon": "fas fa-sign-out-alt",
+            "text": "Logout",
+            "security": "user"
         }
     }
 }

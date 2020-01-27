@@ -1,13 +1,13 @@
 <?php
     namespace classes;
 
-    class Router
+    class router
     {
         var $route;
 
         function __construct($url)
         {
-            $this->route = new Route($url);
+            $this->route = new route($url);
         }
     }
 ?>

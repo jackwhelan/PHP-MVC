@@ -18,24 +18,48 @@
     $config = json_decode(file_get_contents("config.json"));
 
     // Creates a router object, which breaks up the URI into Controller/Methods[]
-    $router = new CoreClass\Router($_SERVER['REQUEST_URI']);
+    $router = new CoreClass\router($_SERVER['REQUEST_URI']);
 
     // Creating an array object to store an associative array of the controllers
-    // specificed in the config file.
+    // specificed in the config file. Also one for models.
     $controllers = array();
+    $models = array();
+
+    // An array object to store error messages to return to the user should they occur.
+    $stack = array();
+
+    // Looping through the models in the config file, creating an instance
+    // of each and storing them all in an associative array.
+    foreach($config->MODELS as $model)
+    {
+        $name = "models\\" . $model->NAME . "_model";
+        $add = new $name();
+        $assoc = array($model->NAME => $add);
+        $models = array_merge($models, $assoc);
+    }
 
     // Looping through the controllers in the config file, creating an instance
     // of each and storing them all in an associative array.
     foreach($config->CONTROLLERS as $ctrl)
     {
-        $name = "controllers\\" . $ctrl->NAME . "_Controller";
-        $add = new $name($ctrl->VIEW, $ctrl->LOCAL_VIEW, $config->DEFAULT_TITLE, $ctrl->LOCAL_TITLE);
+        $name = "controllers\\" . $ctrl->NAME . "_controller";
+        if (isset($models[$ctrl->NAME]))
+        {
+            $add = new $name($models[$ctrl->NAME], $ctrl->VIEW, $ctrl->LOCAL_VIEW, $config->DEFAULT_TITLE, $ctrl->LOCAL_TITLE);
+        }
+        else
+        {
+            $add = new $name(null, $ctrl->VIEW, $ctrl->LOCAL_VIEW, $config->DEFAULT_TITLE, $ctrl->LOCAL_TITLE);
+        }
         $assoc = array($ctrl->NAME => $add);
         $controllers = array_merge($controllers, $assoc);
     }
 
+    // Starting the session
+    session_start();
+
     // Concatenating _controller.php to the name of the router requested controller.
-    $controller_filename = $router->route->controller . "_Controller.php";
+    $controller_filename = $router->route->controller . "_controller.php";
 
     // If the requested controller exists, select it.
     if(file_exists("controllers/$controller_filename"))
@@ -48,6 +72,8 @@
     } // If the requested controller does not exist, select the error controller.
     else
     {
+        $error = "[404] The page you are trying to access has no controller.";
+        array_push($stack, $error);
         $controller = $controllers[$config->ERROR_CONTROLLER];
     }
 
@@ -60,6 +86,20 @@
         {
             $controllers[$router->route->controller]->$method();
         }
+        else
+        {
+            $error = "Requested method '$method' does not exist.";
+            array_push($stack, $error);
+        }
     }
 
-    $controller->renderView();
+    if (isset($stack[0]))
+    {
+        $controllers["error"]->printStack($stack);
+    }
+    else
+    {
+        $controller->renderView();
+    }
+    
+?>

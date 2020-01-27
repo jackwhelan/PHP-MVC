@@ -1,1 +1,24 @@
-Home
+<div class="container">
+    <div class="col-md-12">
+        <?php
+        if (isset($news))
+        {
+            foreach ($news as $article)
+            {
+                echo "<div class='core-cont pt-4 pl-5'>"; 
+                echo "<h2>" . $article['TITLE'] . "</h2>";
+                echo "<span class='text-muted h6'>By " . $article['AUTHOR'] . " on " . $article['DATE'] . "</span>";
+                echo "<p class='mt-3''>" . $article['CONTENT'] . "</p>";
+                echo "</div>";
+            }
+        }
+        else
+        {
+            echo "<div class='core-cont pt-4 pl-5'>"; 
+            echo "<h2 class='mb-4'>Error</h2>";
+            echo "<p>Could not fetch data.</p>";
+            echo "</div>";
+        }
+        ?>
+    </div>
+</div>

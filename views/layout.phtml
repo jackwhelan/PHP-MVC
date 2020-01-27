@@ -1,20 +1,76 @@
 <!DOCTYPE html>
-    <head>
-        <base href="/" />
-        <title><?= $title . " | " . $local_title ?></title>
 
-        <meta charset='utf8' />
-        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+<?php
+$config = json_decode(file_get_contents("config.json"));
+?>
 
-        <link rel='stylesheet' href='assets/css/bootstrap.css' type='text/css' />
-		<link rel='stylesheet' href='assets/css/core.css' type='text/css' />
-		<link rel='shortcut icon' href='assets/images/icon.ico' type='image/x-icon' />
-        <link rel='stylesheet' href='assets/css/fontawesome.css' type='text/css' />
-        
-		<script src='assets/js/jquery.js' ></script>
-		<script src='assets/js/core.js' ></script>
-    </head>
-        <body>
-            <?php require_once($local_view) ?>
-        </body>
+<head>
+    <base href="/" />
+    <title><?= $title . " | " . $local_title ?></title>
+
+    <meta charset='utf8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+
+    <link rel='stylesheet' href='assets/css/bootstrap.css' type='text/css' />
+    <link rel='stylesheet' href='assets/css/core.css' type='text/css' />
+    <link rel='shortcut icon' href='assets/images/icon.ico' type='image/x-icon' />
+    <link rel='stylesheet' href='assets/css/fontawesome.css' type='text/css' />
+
+    <script src='assets/js/jquery.js'></script>
+    <script src='assets/js/core.js'></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand logo w-4" href="#">
+                    <i class="far fa-clock"></i>
+                    <?= $config->DEFAULT_TITLE ?> <h6 class="text-muted"><?= $local_title ?></h6>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mr-auto">
+                        <?php
+                        foreach ($config->NAV->LEFT as $navItem) {
+                            if (!isset($navItem->clearance))
+                            {
+                                include("assets/php/nav-item.php");
+                            }
+                            elseif (isset($navItem->clearance) && ($_SESSION['USER']->clearance == 'user' || $_SESSION['USER']->clearance == 'admin'))
+                            {
+                                include("assets/php/nav-item.php");
+                            }
+                        }
+                        ?>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <?php
+                        foreach ($config->NAV->RIGHT as $navItem) {
+                            if (!isset($navItem->clearance))
+                            {
+                                include("assets/php/nav-item.php");
+                            }
+                        }
+                        ?>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <?php require_once($local_view) ?>
+    </main>
+
+    <footer class="bg-dark fixed-bottom py-1 text-center text-light">
+        &copy 2019 Jack Whelan
+    </footer>
+</body>
+
 </html>

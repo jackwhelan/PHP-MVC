@@ -1,7 +1,7 @@
 <?php
     namespace classes;
 
-    class Route
+    class route
     {
         var $controller;
         var $methods = array();

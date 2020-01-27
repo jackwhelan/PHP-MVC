@@ -3,7 +3,7 @@
     "DEFAULT_CONTROLLER": "home",
     "ERROR_CONTROLLER": "error",
 
-    "DB_CONFIG": "/var/www/ananke.php",
+    "DB_CONFIG": "/var/www/config.php",
 
     "CONTROLLERS":
     {

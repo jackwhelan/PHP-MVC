@@ -48,12 +48,10 @@
 
         "ADMIN_CONTROLLER":
         {
-            "ADMIN_PAGE":
-            {
-                "VIEW": "views/admin.phtml",
-                "TITLE": "ACP"
-            },
-
+            "NAME": "account",
+            "VIEW": "views/layout.phtml",
+            "LOCAL_VIEW": "views/admin.phtml",
+            "LOCAL_TITLE": "ACP",
             "ADMIN_TOOLS":
             {
                 "logout": {

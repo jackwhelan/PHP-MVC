@@ -120,11 +120,7 @@
         {
             if ($_SESSION['USER']->clearance == 'admin')
             {
-                $config = json_decode(file_get_contents("config.json"));
-                $title = $config->DEFAULT_TITLE;
-                $local_view = $config->CONTROLLERS->ADMIN_CONTROLLER->LOCAL_VIEW;
-                $local_title = $config->CONTROLLERS->ADMIN_CONTROLLER->LOCAL_TITLE;
-                include($config->CONTROLLERS->ADMIN_CONTROLLER->VIEW);
+                header("Location: /admin");
             }
             else
             {

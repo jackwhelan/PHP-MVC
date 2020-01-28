@@ -21,35 +21,11 @@
 
         function renderView()
         {
-            if (!isset($_SESSION['USER']))
-            {
-                if(file_exists($this->view))
-                {
-                    if(file_exists($this->local_view))
-                    {
-                        $local_view = $this->local_view;
-                    }
-                    else
-                    {
-                        $stack = array();
-                        $error = "View not found";
-                        array_push($stack, $error);
-                        $this->local_view = "views/error.phtml";
-                    }
-
-                    $title = $this->default_title;
-                    $local_title = $this->local_title;
-                    require_once($this->view);
-                }
-                else
-                {
-                    return "The view for $this could not be found.";
-                }
-            }
-            else
-            {
-                $this->portalMessage("Welcome to the account portal, " . $_SESSION['USER']->first_name . ".");
-            }
+            $config = json_decode(file_get_contents("config.json"));
+            $title = $config->DEFAULT_TITLE;
+            $local_view = $config->CONTROLLERS->ADMIN_CONTROLLER->LOCAL_VIEW;
+            $local_title = $config->CONTROLLERS->ADMIN_CONTROLLER->LOCAL_TITLE;
+            include($config->CONTROLLERS->ADMIN_CONTROLLER->VIEW);
         }
 
         function portalMessage($message)

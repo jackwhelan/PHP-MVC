@@ -99,7 +99,20 @@
     }
     else
     {
-        $controller->renderView();
+        $renderMethods = ['login', 'register', 'author'];
+        $pagesToRender = 0;
+        foreach ($renderMethods as $item)
+        {
+            if ($item == $method)
+            {
+                $pagesToRender = $pagesToRender + 1;
+            }
+        }
+
+        if ($pagesToRender < 1)
+        {
+            $controller->renderView();
+        }
     }
     
 ?>

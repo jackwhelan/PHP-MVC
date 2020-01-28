@@ -99,9 +99,8 @@
     }
     else
     {
-        $renderMethods = ['login', 'register', 'author'];
         $pagesToRender = 0;
-        foreach ($renderMethods as $item)
+        foreach ($config->RENDER_METHODS as $item)
         {
             if ($item == $method)
             {

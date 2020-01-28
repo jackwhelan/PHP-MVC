@@ -120,7 +120,7 @@
     {
         "writeNews": {
             "link": "admin/author",
-            "icon": "fa fa-lock",
+            "icon": "fa fa-pencil",
             "text": "Author",
             "security": "admin"
         },
@@ -138,5 +138,11 @@
             "text": "Logout",
             "security": "user"
         }
-    }
+    },
+
+    "RENDER_METHODS": [
+        "login",
+        "register",
+        "author"
+    ]
 }

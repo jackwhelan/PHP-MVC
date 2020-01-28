@@ -48,7 +48,7 @@
 
         "ADMIN_CONTROLLER":
         {
-            "NAME": "account",
+            "NAME": "admin",
             "VIEW": "views/layout.phtml",
             "LOCAL_VIEW": "views/admin.phtml",
             "LOCAL_TITLE": "ACP",

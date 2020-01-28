@@ -35,11 +35,11 @@ $config = json_decode(file_get_contents("config.json"));
                         foreach ($config->NAV->LEFT as $navItem) {
                             if (!isset($navItem->clearance))
                             {
-                                include("assets/php/nav-item.php");
+                                require_once("assets/php/nav-item.php");
                             }
                             elseif (isset($navItem->clearance) && ($_SESSION['USER']->clearance == 'user' || $_SESSION['USER']->clearance == 'admin'))
                             {
-                                include("assets/php/nav-item.php");
+                                require_once("assets/php/nav-item.php");
                             }
                         }
                         ?>
@@ -49,7 +49,7 @@ $config = json_decode(file_get_contents("config.json"));
                         foreach ($config->NAV->RIGHT as $navItem) {
                             if (!isset($navItem->clearance))
                             {
-                                include("assets/php/nav-item.php");
+                                require_once("assets/php/nav-item.php");
                             }
                         }
                         ?>

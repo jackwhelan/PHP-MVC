@@ -26,7 +26,7 @@
             $local_view = $config->CONTROLLERS->ADMIN_CONTROLLER->LOCAL_VIEW;
             $local_title = $config->CONTROLLERS->ADMIN_CONTROLLER->LOCAL_TITLE;
             $msg = "Welcome to the ACP, " . $_SESSION['USER']->first_name . ".";
-            include($config->CONTROLLERS->ADMIN_CONTROLLER->VIEW);
+            require_once($config->CONTROLLERS->ADMIN_CONTROLLER->VIEW);
         }
 
         function author()
@@ -36,7 +36,7 @@
             $local_view = $config->CONTROLLERS->ADMIN_CONTROLLER->AUTHOR_PAGE->VIEW;
             $local_title = $config->CONTROLLERS->ADMIN_CONTROLLER->AUTHOR_PAGE->TITLE;
             $msg = "Welcome to the Author page, " . $_SESSION['USER']->first_name . ".";
-            include($config->CONTROLLERS->ADMIN_CONTROLLER->VIEW);
+            require_once($config->CONTROLLERS->ADMIN_CONTROLLER->VIEW);
         }
 
         function portalMessage($message)
@@ -46,7 +46,7 @@
             $local_view = $config->CONTROLLERS->ACCOUNT_CONTROLLER->PORTAL_PAGE->VIEW;
             $local_title = $config->CONTROLLERS->ACCOUNT_CONTROLLER->PORTAL_PAGE->TITLE;
             $msg = $message;
-            include($config->CONTROLLERS->ACCOUNT_CONTROLLER->VIEW);
+            require_once($config->CONTROLLERS->ACCOUNT_CONTROLLER->VIEW);
         }
     }
 ?>

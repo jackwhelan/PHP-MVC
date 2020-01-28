@@ -17,7 +17,7 @@
 
                 if (file_exists($config->DB_CONFIG))
                 {
-                    include($config->DB_CONFIG);
+                    require_once($config->DB_CONFIG);
 
                     if (!($STMT = $CONN->prepare("INSERT INTO USER(FIRST_NAME, LAST_NAME, USERNAME, PASSWORD) VALUES (?, ?, ?, ?)")))
                     {
@@ -65,7 +65,7 @@
                 # Retrieve password hash to verify password.
                 if (file_exists($config->DB_CONFIG))
                 {
-                    include($config->DB_CONFIG);
+                    require_once($config->DB_CONFIG);
 
                     # Stores whether or not there has been an error.
                     $hadError = false;

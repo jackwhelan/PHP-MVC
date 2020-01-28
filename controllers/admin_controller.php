@@ -29,6 +29,16 @@
             include($config->CONTROLLERS->ADMIN_CONTROLLER->VIEW);
         }
 
+        function author()
+        {
+            $config = json_decode(file_get_contents("config.json"));
+            $title = $config->DEFAULT_TITLE;
+            $local_view = $config->CONTROLLERS->ADMIN_CONTROLLER->AUTHOR_PAGE->VIEW;
+            $local_title = $config->CONTROLLERS->ADMIN_CONTROLLER->AUTHOR_PAGE->TITLE;
+            $msg = "Welcome to the Author page, " . $_SESSION['USER']->first_name . ".";
+            include($config->CONTROLLERS->ADMIN_CONTROLLER->VIEW);
+        }
+
         function portalMessage($message)
         {
             $config = json_decode(file_get_contents("config.json"));

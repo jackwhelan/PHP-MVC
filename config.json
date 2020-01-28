@@ -60,6 +60,11 @@
                     "text": "Filler",
                     "security": "admin"
                 }
+            },
+            "AUTHOR_PAGE":
+            {
+                "VIEW": "views/author.phtml",
+                "TITLE": "Author"
             }
         }
     },
@@ -113,6 +118,13 @@
 
     "PORTAL_ITEMS":
     {
+        "writeNews": {
+            "link": "admin/author",
+            "icon": "fa fa-lock",
+            "text": "Author",
+            "security": "admin"
+        },
+
         "acp": {
             "link": "account/jawhacp",
             "icon": "fa fa-lock",

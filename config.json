@@ -54,11 +54,17 @@
             "LOCAL_TITLE": "ACP",
             "ADMIN_TOOLS":
             {
+                "profile": {
+                    "link": "#",
+                    "icon": "fas fa-user-circle",
+                    "text": "Profile",
+                    "security": "admin"
+                },
                 "logout": {
                     "link": "account/logout",
                     "icon": "fas fa-sign-out-alt",
                     "text": "Logout",
-                    "security": "user"
+                    "security": "admin"
                 }
             }
         }

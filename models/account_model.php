@@ -111,7 +111,6 @@
                     while ($STMT->fetch())
                     {
                         $userObject = new CoreClass\user($ID,$FIRST_NAME,$LAST_NAME,$USERNAME,$PASSWORD,$CLEARANCE);
-                        $userObject->dump();
                     }
                 }
 

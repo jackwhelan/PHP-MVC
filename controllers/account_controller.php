@@ -81,11 +81,13 @@
             $_SESSION['USER'] = $this->model->submitLogin();
             if (isset($_SESSION['USER']))
             {
+                $_SESSION['USER']->dump();
                 header('Location: /');
                 $this->portalMessage("Logged in successfully.");
             }
             else
             {
+                echo("USER SESSION VARIABLE WAS NEVER SET.");
                 header("Location: ..");
             }
         }

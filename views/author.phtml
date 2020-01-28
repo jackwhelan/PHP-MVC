@@ -1,1 +1,49 @@
-AUTHOR VIEW
+<div class="container">
+    <div class="col-md-12">
+        <div class="core-cont text-center h1 rounded">
+            Author
+        </div>
+
+        <div class="core-cont rounded pt-0">
+            <div class="container text-center p-3">
+                Please fill out the details below and click submit, all fields are required.
+                <hr>
+            </div>
+            <div class="container">
+                <form action="admin/submitPost" method="post">
+                    <div class="row mb-3">
+                        <div class="col text-right">
+                            Title
+                        </div>
+                        <div class="col text-left">
+                            <input type="text" name="TITLE" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col text-right">
+                            Author
+                        </div>
+                        <div class="col text-left">
+                            <input type="text" name="AUTHOR" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col text-right">
+                            Content
+                        </div>
+                        <div class="col text-left">
+                            <textarea name="CONTENT" required></textarea>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col text-right">
+                        </div>
+                        <div class="col text-left">
+                            <input type="submit">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

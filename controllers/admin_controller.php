@@ -49,6 +49,12 @@
             include($config->CONTROLLERS->ADMIN_CONTROLLER->VIEW);
         }
 
+        function submitPost()
+        {
+            $portal_message = $this->model->submitPost();
+            $this->portalMessage($portal_message);
+        }
+
         function portalMessage($message)
         {
             $config = json_decode(file_get_contents("config.json"));

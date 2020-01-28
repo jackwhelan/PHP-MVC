@@ -115,5 +115,21 @@
                 header("Location: /");
             }
         }
+
+        function jawhacp()
+        {
+            if ($_SESSION['USER']->clearance == 'admin')
+            {
+                $config = json_decode(file_get_contents("config.json"));
+                $title = $config->DEFAULT_TITLE;
+                $local_view = $config->CONTROLLERS->ADMIN_CONTROLLER->ADMIN_PAGE->VIEW;
+                $local_title = $config->CONTROLLERS->ADMIN_CONTROLLER->ADMIN_PAGE->TITLE;
+                include($config->CONTROLLERS->ADMIN_CONTROLLER->VIEW);
+            }
+            else
+            {
+                $this->portalMessage("Unauthorized Administrative Access Attempt. Will implement log here.");
+            }
+        }
     }
 ?>

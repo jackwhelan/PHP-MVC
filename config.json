@@ -44,6 +44,25 @@
                 "VIEW": "views/portal.phtml",
                 "TITLE": "Portal"
             }
+        },
+
+        "ADMIN_CONTROLLER":
+        {
+            "ADMIN_PAGE":
+            {
+                "VIEW": "views/admin.phtml",
+                "TITLE": "ACP"
+            },
+
+            "ADMIN_TOOLS":
+            {
+                "logout": {
+                    "link": "account/logout",
+                    "icon": "fas fa-sign-out-alt",
+                    "text": "Logout",
+                    "security": "user"
+                }
+            }
         }
     },
 
@@ -101,6 +120,13 @@
             "icon": "fas fa-sign-out-alt",
             "text": "Logout",
             "security": "user"
+        },
+
+        "acp": {
+            "link": "account/jawhacp",
+            "icon": "fa fa-lock",
+            "text": "ACP",
+            "security": "admin"
         }
     }
 }

@@ -34,22 +34,16 @@ h6 {
     margin-top: 2vh;
 }
 
-.loginbutton {
-    margin-left: 2vh;
-    margin-right: 1vh;
+.logregbuts {
+    transition: 1s;
+    width: 100%;
 }
 
-.loginbutton:hover {
+.logregbuts:hover {
     background-color: darkgrey;
-}
-
-.registerbutton {
-    margin-left: 1vh;
-    margin-right: 2vh;
-}
-
-.registerbutton:hover {
-    background-color: darkgrey;
+    transition: 1s;
+    width: 90%;
+    border-radius: 16px;
 }
 
 .link-unstyled,

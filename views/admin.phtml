@@ -15,35 +15,7 @@
                         $config = json_decode(file_get_contents("config.json"));
                         foreach($config->ADMIN_CONTROLLER->ADMIN_TOOLS as $item)
                         {
-                            if (!isset($_SESSION['USER']->clearance))
-                            {
-                                if ($item->security == "guest" || $item->security == "all")
-                                {
-                                    echo '<a href="' . $item->link . '">
-                                        <div class="portal-button bg-light">
-                                            <i class="' . $item->icon . '"></i>
-                                            <hr>
-                                            ' . $item->text . '
-                                        </div>
-                                    </a>
-                                    ';
-                                }
-                            }
-                            else if ($_SESSION['USER']->clearance == "user")
-                            {
-                                if ($item->security == "user" || $item->security == "all")
-                                {
-                                    echo '<a href="' . $item->link . '">
-                                        <div class="portal-button bg-light">
-                                            <i class="' . $item->icon . '"></i>
-                                            <hr>
-                                            ' . $item->text . '
-                                        </div>
-                                    </a>
-                                    ';
-                                }
-                            }
-                            else if ($_SESSION['USER']->clearance == "admin")
+                            if ($_SESSION['USER']->clearance == "admin")
                             {
                                 if ($item->security == "user" || $item->security == "admin" || $item->security == "all")
                                 {

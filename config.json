@@ -57,13 +57,7 @@
                 "profile": {
                     "link": "#",
                     "icon": "fas fa-user-circle",
-                    "text": "Profile",
-                    "security": "admin"
-                },
-                "logout": {
-                    "link": "account/logout",
-                    "icon": "fas fa-sign-out-alt",
-                    "text": "Logout",
+                    "text": "Filler",
                     "security": "admin"
                 }
             }
@@ -119,18 +113,18 @@
 
     "PORTAL_ITEMS":
     {
-        "logout": {
-            "link": "account/logout",
-            "icon": "fas fa-sign-out-alt",
-            "text": "Logout",
-            "security": "user"
-        },
-
         "acp": {
             "link": "account/jawhacp",
             "icon": "fa fa-lock",
             "text": "ACP",
             "security": "admin"
+        },
+
+        "logout": {
+            "link": "account/logout",
+            "icon": "fas fa-sign-out-alt",
+            "text": "Logout",
+            "security": "user"
         }
     }
 }

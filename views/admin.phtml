@@ -13,7 +13,7 @@
                 <div class="row">
                     <?php
                         $config = json_decode(file_get_contents("config.json"));
-                        foreach($config->ADMIN_CONTROLLER->ADMIN_TOOLS as $item)
+                        foreach($config->CONTROLLERS->ADMIN_CONTROLLER->ADMIN_TOOLS as $item)
                         {
                             if ($_SESSION['USER']->clearance == "admin")
                             {

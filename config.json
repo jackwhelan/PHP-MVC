@@ -79,6 +79,11 @@
         "HOME_MODEL":
         {
             "NAME": "home"
+        },
+
+        "ADMIN_MODEL":
+        {
+            "NAME": "admin"
         }
     },
 

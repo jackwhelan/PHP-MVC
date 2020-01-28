@@ -21,12 +21,22 @@
 
         function renderView()
         {
-            $config = json_decode(file_get_contents("config.json"));
-            $title = $config->DEFAULT_TITLE;
-            $local_view = $config->CONTROLLERS->ADMIN_CONTROLLER->LOCAL_VIEW;
-            $local_title = $config->CONTROLLERS->ADMIN_CONTROLLER->LOCAL_TITLE;
-            $msg = "Welcome to the ACP, " . $_SESSION['USER']->first_name . ".";
-            include($config->CONTROLLERS->ADMIN_CONTROLLER->VIEW);
+            if ($_SESSION['USER']->clearance = "admin")
+            {
+                $config = json_decode(file_get_contents("config.json"));
+                $title = $config->DEFAULT_TITLE;
+                $local_view = $config->CONTROLLERS->ADMIN_CONTROLLER->LOCAL_VIEW;
+                $local_title = $config->CONTROLLERS->ADMIN_CONTROLLER->LOCAL_TITLE;
+                $msg = "Welcome to the ACP, " . $_SESSION['USER']->first_name . ".";
+                include($config->CONTROLLERS->ADMIN_CONTROLLER->VIEW);
+            }
+            else
+            {
+                $stack = array();
+                $error = "Permission Denied.";
+                array_push($stack, $error);
+                $this->local_view = "views/error.phtml";
+            }
         }
 
         function author()

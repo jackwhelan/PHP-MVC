@@ -39,7 +39,7 @@
 
                     $title = $this->default_title;
                     $local_title = $this->local_title;
-                    require_once($this->view);
+                    include($this->view);
                 }
                 else
                 {
@@ -58,7 +58,7 @@
             $title = $config->DEFAULT_TITLE;
             $local_view = $config->CONTROLLERS->ACCOUNT_CONTROLLER->LOGIN_PAGE->VIEW;
             $local_title = $config->CONTROLLERS->ACCOUNT_CONTROLLER->LOGIN_PAGE->TITLE;
-            require_once($config->CONTROLLERS->ACCOUNT_CONTROLLER->VIEW);
+            include($config->CONTROLLERS->ACCOUNT_CONTROLLER->VIEW);
         }
 
         function register()
@@ -67,7 +67,7 @@
             $title = $config->DEFAULT_TITLE;
             $local_view = $config->CONTROLLERS->ACCOUNT_CONTROLLER->REGISTER_PAGE->VIEW;
             $local_title = $config->CONTROLLERS->ACCOUNT_CONTROLLER->REGISTER_PAGE->TITLE;
-            require_once($config->CONTROLLERS->ACCOUNT_CONTROLLER->VIEW);
+            include($config->CONTROLLERS->ACCOUNT_CONTROLLER->VIEW);
         }
 
         function submitRegistration()
@@ -97,7 +97,7 @@
             $local_view = $config->CONTROLLERS->ACCOUNT_CONTROLLER->PORTAL_PAGE->VIEW;
             $local_title = $config->CONTROLLERS->ACCOUNT_CONTROLLER->PORTAL_PAGE->TITLE;
             $msg = $message;
-            require_once($config->CONTROLLERS->ACCOUNT_CONTROLLER->VIEW);
+            include($config->CONTROLLERS->ACCOUNT_CONTROLLER->VIEW);
         }
 
         function logout()

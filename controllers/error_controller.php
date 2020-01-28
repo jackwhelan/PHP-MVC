@@ -37,7 +37,7 @@
 
                 $title = $this->default_title;
                 $local_title = $this->local_title;
-                require_once($this->view);
+                include($this->view);
             }
             else
             {
@@ -62,7 +62,7 @@
 
                 $title = $this->default_title;
                 $local_title = $this->local_title;
-                require_once($this->view);
+                include($this->view);
             }
             else
             {

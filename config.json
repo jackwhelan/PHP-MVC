@@ -150,6 +150,7 @@
         "register",
         "author",
         "submitLogin",
-        "submitRegistration"
+        "submitRegistration",
+        "submitPost"
     ]
 }

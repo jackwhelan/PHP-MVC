@@ -125,7 +125,7 @@
     {
         "writeNews": {
             "link": "admin/author",
-            "icon": "fa fa-pencil",
+            "icon": "fas fa-pen",
             "text": "Author",
             "security": "admin"
         },

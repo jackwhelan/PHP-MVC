@@ -35,8 +35,7 @@
                 $stack = array();
                 $error = "Permission Denied.";
                 array_push($stack, $error);
-                $local_view = $config->CONTROLLERS->ERROR_CONTROLLER->LOCAL_VIEW;
-                include($config->CONTROLLERS->ERROR_CONTROLLER->VIEW);
+                header("Location: /error");
             }
         }
 
@@ -56,8 +55,7 @@
                 $stack = array();
                 $error = "Permission Denied.";
                 array_push($stack, $error);
-                $local_view = $config->CONTROLLERS->ERROR_CONTROLLER->LOCAL_VIEW;
-                include($config->CONTROLLERS->ERROR_CONTROLLER->VIEW);
+                header("Location: /error");
             }
         }
 

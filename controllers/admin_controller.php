@@ -35,18 +35,30 @@
                 $stack = array();
                 $error = "Permission Denied.";
                 array_push($stack, $error);
-                $this->local_view = "views/error.phtml";
+                $local_view = $config->CONTROLLERS->ERROR_CONTROLLER->LOCAL_VIEW;
+                include($config->CONTROLLERS->ERROR_CONTROLLER->VIEW);
             }
         }
 
         function author()
         {
-            $config = json_decode(file_get_contents("config.json"));
-            $title = $config->DEFAULT_TITLE;
-            $local_view = $config->CONTROLLERS->ADMIN_CONTROLLER->AUTHOR_PAGE->VIEW;
-            $local_title = $config->CONTROLLERS->ADMIN_CONTROLLER->AUTHOR_PAGE->TITLE;
-            $msg = "Welcome to the Author page, " . $_SESSION['USER']->first_name . ".";
-            include($config->CONTROLLERS->ADMIN_CONTROLLER->VIEW);
+            if ($_SESSION['USER']->clearance == "admin")
+            {
+                $config = json_decode(file_get_contents("config.json"));
+                $title = $config->DEFAULT_TITLE;
+                $local_view = $config->CONTROLLERS->ADMIN_CONTROLLER->AUTHOR_PAGE->VIEW;
+                $local_title = $config->CONTROLLERS->ADMIN_CONTROLLER->AUTHOR_PAGE->TITLE;
+                $msg = "Welcome to the Author page, " . $_SESSION['USER']->first_name . ".";
+                include($config->CONTROLLERS->ADMIN_CONTROLLER->VIEW);
+            }
+            else
+            {
+                $stack = array();
+                $error = "Permission Denied.";
+                array_push($stack, $error);
+                $local_view = $config->CONTROLLERS->ERROR_CONTROLLER->LOCAL_VIEW;
+                include($config->CONTROLLERS->ERROR_CONTROLLER->VIEW);
+            }
         }
 
         function submitPost()

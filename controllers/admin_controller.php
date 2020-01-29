@@ -21,7 +21,7 @@
 
         function renderView()
         {
-            if ($_SESSION['USER']->clearance = "admin")
+            if ($_SESSION['USER']->clearance == "admin")
             {
                 $config = json_decode(file_get_contents("config.json"));
                 $title = $config->DEFAULT_TITLE;

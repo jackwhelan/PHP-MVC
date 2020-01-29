@@ -148,6 +148,8 @@
     "RENDER_METHODS": [
         "login",
         "register",
-        "author"
+        "author",
+        "submitLogin",
+        "submitRegistration"
     ]
 }

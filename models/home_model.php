@@ -17,7 +17,7 @@
 
                 while ($row = $result->fetch_assoc())
                 {
-                    array_push($articles, $row);
+                    array_unshift($articles, $row);
                 }
 
                 $result->free();

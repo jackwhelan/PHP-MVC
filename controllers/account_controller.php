@@ -86,7 +86,7 @@
             }
             else
             {
-                $this->portalMessage("USER SESSION VARIABLE WAS NEVER SET - The database may be offline, please contact a system administrator for help.");
+                $this->portalMessage("Incorrect Username or Password.");
             }
         }
 
